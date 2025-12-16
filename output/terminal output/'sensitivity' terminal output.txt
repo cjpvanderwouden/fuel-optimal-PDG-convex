@@ -1,0 +1,65 @@
+PS C:\Research & Study\Fuel Optimal PDG> & C:\Users\cvand\AppData\Local\Programs\Python\Python313\python.exe "c:/Research & Study/Fuel Optimal PDG/sensitivity.py"
+
+Powered Descent Configuration
+=============================
+Mass:       m0 = 25000 kg, m_dry = 22000 kg
+Propellant: 3000 kg available
+Thrust:     T_min = 250 kN, T_max = 845 kN
+Isp:        282 s (v_e = 2765.6 m/s)
+
+Accel bounds (conservative):
+  rho_min = 10.00 m/s^2
+  rho_max = 38.41 m/s^2
+
+Constraints:
+  Glideslope: 6.0° from horizontal (tan = 0.105)
+  Pointing:   20.0° max gimbal (cos = 0.940)
+
+Initial state:
+  r0 = (500.0, 100.0, 1500.0) m
+  v0 = (20.0, 5.0, -75.0) m/s
+
+Finding optimal tf...
+Using optimal tf = 25.6s
+
+============================================================
+Glideslope Sensitivity
+============================================================
+Sweeping glideslope angle γ_gs ∈ [3.0, 20.0]°
+  γ_gs = 3.0°: 2909.2 kg
+  γ_gs = 4.2°: 2909.2 kg
+  γ_gs = 5.4°: 2909.2 kg
+  γ_gs = 6.6°: 2909.2 kg
+  γ_gs = 7.9°: 2909.2 kg
+  γ_gs = 9.1°: 2909.2 kg
+  γ_gs = 10.3°: 2909.2 kg
+  γ_gs = 11.5°: 2909.2 kg
+  γ_gs = 12.7°: 2909.2 kg
+  γ_gs = 13.9°: 2909.2 kg
+  γ_gs = 15.1°: 2909.2 kg
+  γ_gs = 16.4°: 2909.2 kg
+  γ_gs = 17.6°: 2909.2 kg
+  γ_gs = 18.8°: 2909.2 kg
+  γ_gs = 20.0°: 2909.2 kg
+c:\Research & Study\Fuel Optimal PDG\sensitivity.py:253: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+  ax.legend()
+
+============================================================
+Throttle Limit Sensitivity
+============================================================
+Sweeping T_min ∈ [200, 500] kN
+  T_min = 200 kN (24%): 2888.6 kg
+  T_min = 221 kN (26%): 2896.3 kg
+  T_min = 243 kN (29%): 2905.5 kg
+  T_min = 264 kN (31%): 2918.4 kg
+  T_min = 286 kN (34%): INFEASIBLE
+  T_min = 307 kN (36%): INFEASIBLE
+  T_min = 329 kN (39%): INFEASIBLE
+  T_min = 350 kN (41%): INFEASIBLE
+  T_min = 371 kN (44%): INFEASIBLE
+  T_min = 393 kN (46%): INFEASIBLE
+  T_min = 414 kN (49%): INFEASIBLE
+  T_min = 436 kN (52%): INFEASIBLE
+  T_min = 457 kN (54%): INFEASIBLE
+  T_min = 479 kN (57%): INFEASIBLE
+  T_min = 500 kN (59%): INFEASIBLE

@@ -1,0 +1,59 @@
+PS C:\Research & Study\Fuel Optimal PDG> & C:\Users\cvand\AppData\Local\Programs\Python\Python313\python.exe "c:/Research & Study/Fuel Optimal PDG/solver.py"
+
+Powered Descent Configuration
+=============================
+Mass:       m0 = 25000 kg, m_dry = 22000 kg
+Propellant: 3000 kg available
+Thrust:     T_min = 250 kN, T_max = 845 kN
+Isp:        282 s (v_e = 2765.6 m/s)
+
+Accel bounds (conservative):
+  rho_min = 10.00 m/s^2
+  rho_max = 38.41 m/s^2
+
+Constraints:
+  Glideslope: 6.0° from horizontal (tan = 0.105)
+  Pointing:   20.0° max gimbal (cos = 0.940)
+
+Initial state:
+  r0 = (500.0, 100.0, 1500.0) m
+  v0 = (20.0, 5.0, -75.0) m/s
+
+
+============================================================
+Testing single solve (tf = 30s)...
+============================================================
+Solve FAILED: infeasible
+
+============================================================
+Testing grid search...
+============================================================
+Grid search over tf ∈ [20, 50] with 15 points...
+  tf = 20.0s: infeasible
+  tf = 22.1s: infeasible
+  tf = 24.3s: infeasible
+  tf = 26.4s: 2959.6 kg
+  tf = 28.6s: infeasible
+  tf = 30.7s: infeasible
+  tf = 32.9s: infeasible
+  tf = 35.0s: infeasible
+  tf = 37.1s: infeasible
+  tf = 39.3s: infeasible
+  tf = 41.4s: infeasible
+  tf = 43.6s: infeasible
+  tf = 45.7s: infeasible
+  tf = 47.9s: infeasible
+  tf = 50.0s: infeasible
+
+Optimal: tf = 26.43s, fuel = 2959.6 kg
+
+Solve Result: optimal
+==============================
+Flight time:   26.43 s
+Fuel used:     2959.6 kg
+Final mass:    22040.4 kg
+Solve time:    174.9 ms
+
+Losslessness check:
+  Tight: True
+  Max relative slack: -3.57e-08

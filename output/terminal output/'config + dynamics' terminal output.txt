@@ -1,0 +1,42 @@
+PS C:\Research & Study\Fuel Optimal PDG> & C:\Users\cvand\AppData\Local\Programs\Python\Python313\python.exe "c:/Research & Study/Fuel Optimal PDG/config.py"
+
+Powered Descent Configuration
+=============================
+Mass:       m0 = 25000 kg, m_dry = 22000 kg
+Propellant: 3000 kg available
+Thrust:     T_min = 250 kN, T_max = 845 kN
+Isp:        282 s (v_e = 2765.6 m/s)
+
+Accel bounds (conservative):
+  rho_min = 10.00 m/s^2
+  rho_max = 38.41 m/s^2
+
+Constraints:
+  Glideslope: 6.0° from horizontal (tan = 0.105)
+  Pointing:   20.0° max gimbal (cos = 0.940)
+
+Initial state:
+  r0 = (500.0, 100.0, 1500.0) m
+  v0 = (20.0, 5.0, -75.0) m/s
+
+PS C:\Research & Study\Fuel Optimal PDG> & C:\Users\cvand\AppData\Local\Programs\Python\Python313\python.exe "c:/Research & Study/Fuel Optimal PDG/dynamics.py"
+State transition matrix A:
+[[1.  0.  0.  0.5 0.  0.  0. ]
+ [0.  1.  0.  0.  0.5 0.  0. ]
+ [0.  0.  1.  0.  0.  0.5 0. ]
+ [0.  0.  0.  1.  0.  0.  0. ]
+ [0.  0.  0.  0.  1.  0.  0. ]
+ [0.  0.  0.  0.  0.  1.  0. ]
+ [0.  0.  0.  0.  0.  0.  1. ]]
+
+Control matrix B:
+[[ 1.25000000e-01  0.00000000e+00  0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  1.25000000e-01  0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  0.00000000e+00  1.25000000e-01  0.00000000e+00]
+ [ 5.00000000e-01  0.00000000e+00  0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  5.00000000e-01  0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  0.00000000e+00  5.00000000e-01  0.00000000e+00]
+ [ 0.00000000e+00  0.00000000e+00  0.00000000e+00 -1.80794294e-04]]
+
+Gravity term c:
+[ 0.        0.       -1.225875  0.        0.       -4.9035    0.      ]

@@ -1,0 +1,153 @@
+PS C:\Research & Study\Fuel Optimal PDG> & C:\Users\cvand\AppData\Local\Programs\Python\Python313\python.exe "c:/Research & Study/Fuel Optimal PDG/main.py"
+======================================================================
+FUEL-OPTIMAL POWERED DESCENT GUIDANCE
+======================================================================
+
+Powered Descent Configuration
+=============================
+Mass:       m0 = 25000 kg, m_dry = 22000 kg
+Propellant: 3000 kg available
+Thrust:     T_min = 250 kN, T_max = 845 kN
+Isp:        282 s (v_e = 2765.6 m/s)
+
+Accel bounds (conservative):
+  rho_min = 10.00 m/s^2
+  rho_max = 38.41 m/s^2
+
+Constraints:
+  Glideslope: 6.0° from horizontal (tan = 0.105)
+  Pointing:   20.0° max gimbal (cos = 0.940)
+
+Initial state:
+  r0 = (500.0, 100.0, 1500.0) m
+  v0 = (20.0, 5.0, -75.0) m/s
+
+
+======================================================================
+STEP 1: Grid Search over Flight Time
+======================================================================
+Grid search over tf ∈ [22.0, 32.0] with 30 points...
+  tf = 22.0s: infeasible
+  tf = 22.3s: infeasible
+  tf = 22.7s: infeasible
+  tf = 23.0s: infeasible
+  tf = 23.4s: infeasible
+  tf = 23.7s: infeasible
+  tf = 24.1s: infeasible
+  tf = 24.4s: infeasible
+  tf = 24.8s: infeasible
+  tf = 25.1s: 2887.8 kg
+  tf = 25.4s: 2902.8 kg
+  tf = 25.8s: 2921.5 kg
+  tf = 26.1s: 2941.7 kg
+  tf = 26.5s: 2963.0 kg
+  tf = 26.8s: 2984.9 kg
+  tf = 27.2s: infeasible
+  tf = 27.5s: infeasible
+  tf = 27.9s: infeasible
+  tf = 28.2s: infeasible
+  tf = 28.6s: infeasible
+  tf = 28.9s: infeasible
+  tf = 29.2s: infeasible
+  tf = 29.6s: infeasible
+  tf = 29.9s: infeasible
+  tf = 30.3s: infeasible
+  tf = 30.6s: infeasible
+  tf = 31.0s: infeasible
+  tf = 31.3s: infeasible
+  tf = 31.7s: infeasible
+  tf = 32.0s: infeasible
+
+Optimal: tf = 25.10s, fuel = 2887.8 kg
+
+Solve Result: optimal
+==============================
+Flight time:   25.10 s
+Fuel used:     2887.8 kg
+Final mass:    22112.2 kg
+Solve time:    174.6 ms
+
+Losslessness check:
+  Tight: True
+  Max relative slack: 3.29e-08
+
+
+======================================================================
+STEP 2: Generating Visualizations
+======================================================================
+  Saved: trajectory_3d.png
+  Saved: trajectory_2d.png
+  Saved: time_series.png
+  Saved: losslessness.png
+  Saved: grid_search.png
+
+======================================================================
+STEP 3: Sensitivity Analysis
+======================================================================
+
+============================================================
+Glideslope Sensitivity
+============================================================
+Sweeping glideslope angle γ_gs ∈ [3.0, 20.0]°
+  γ_gs = 3.0°: 2887.8 kg
+  γ_gs = 4.2°: 2887.8 kg
+  γ_gs = 5.4°: 2887.8 kg
+  γ_gs = 6.6°: 2887.8 kg
+  γ_gs = 7.9°: 2887.8 kg
+  γ_gs = 9.1°: 2887.8 kg
+  γ_gs = 10.3°: 2887.8 kg
+  γ_gs = 11.5°: 2887.8 kg
+  γ_gs = 12.7°: 2887.8 kg
+  γ_gs = 13.9°: 2887.8 kg
+  γ_gs = 15.1°: 2887.8 kg
+  γ_gs = 16.4°: 2887.8 kg
+  γ_gs = 17.6°: 2887.8 kg
+  γ_gs = 18.8°: 2887.8 kg
+  γ_gs = 20.0°: 2887.8 kg
+c:\Research & Study\Fuel Optimal PDG\sensitivity.py:253: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+  ax.legend()
+
+============================================================
+Throttle Limit Sensitivity
+============================================================
+Sweeping T_min ∈ [200, 500] kN
+  T_min = 200 kN (24%): 2862.9 kg
+  T_min = 221 kN (26%): 2871.5 kg
+  T_min = 243 kN (29%): 2882.6 kg
+  T_min = 264 kN (31%): INFEASIBLE
+  T_min = 286 kN (34%): INFEASIBLE
+  T_min = 307 kN (36%): INFEASIBLE
+  T_min = 329 kN (39%): INFEASIBLE
+  T_min = 350 kN (41%): INFEASIBLE
+  T_min = 371 kN (44%): INFEASIBLE
+  T_min = 393 kN (46%): INFEASIBLE
+  T_min = 414 kN (49%): INFEASIBLE
+  T_min = 436 kN (52%): INFEASIBLE
+  T_min = 457 kN (54%): INFEASIBLE
+  T_min = 479 kN (57%): INFEASIBLE
+  T_min = 500 kN (59%): INFEASIBLE
+
+======================================================================
+STEP 4: Saving Results
+======================================================================
+  Saved: results.json
+  Saved: trajectory.npz
+
+======================================================================
+COMPLETE
+======================================================================
+
+Results saved to: ./output/
+  - results.json     : Summary of optimal solution
+  - trajectory.npz   : Full trajectory data (numpy format)
+  - figures/         : All visualizations
+
+Key results:
+  Optimal flight time:  25.10 s
+  Fuel consumed:        2887.8 kg
+  Final mass:           22112.2 kg
+  Propellant fraction:  96.3% of available
+
+Relaxation verification:
+  Tight at optimality:  True
+  Max relative slack:   3.29e-08
