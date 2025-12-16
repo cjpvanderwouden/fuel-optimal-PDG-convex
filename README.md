@@ -130,8 +130,8 @@ References
 - Szmuk, M. and Açıkmeşe, B. (2018). Successive convexification for 6-DoF Mars rocket powered landing with free-final-time. In AIAA Guidance, Navigation, and Control Conference.
 ## Author
 
-Casper J.P. van der Wouden — December 2025
+Casper J.P. van der Wouden - December 2025
 
 ---
 
-*This project demonstrates the intersection of optimal control theory, convex optimization, and aerospace engineering—the same mathematics that enables autonomous rocket landings.*
+*This project demonstrates the intersection of optimal control theory, convex optimization, and aerospace engineering—the same mathematics that enables autonomous rocket landings. This is a 'personal project' out of interest, I am an econ. student..*
