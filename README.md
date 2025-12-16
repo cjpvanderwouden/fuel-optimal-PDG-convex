@@ -53,10 +53,6 @@ The problem has a narrow **feasibility window** (tf ∈ [25, 27]s). This is beca
 
 There's a sharp **threshold effect** on minimum throttle: above ~30% of max thrust, landing becomes infeasible. This has real engineering implications—SpaceX's Merlin engines throttle to ~40%, which drives their "suicide burn" landing profile.
 
-## Installation
-
-pip install -r requirements.txt
-
 **Dependencies**:
 - numpy
 - cvxpy
