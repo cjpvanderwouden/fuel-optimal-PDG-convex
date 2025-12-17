@@ -4,7 +4,7 @@ Implementation of fuel-optimal powered descent guidance using convex optimizatio
 
 ## Overview
 
-This project solves the problem of landing a rocket optimally—minimizing fuel consumption while satisfying safety and physical constraints. The key insight is that the inherently non-convex problem (due to minimum thrust constraints) admits a **lossless convexification**: relaxing the equality constraint to an inequality yields a second-order cone program (SOCP) whose optimal solution satisfies the original constraint.
+This project solves the problem of landing a rocket optimally. Minimizing fuel consumption while satisfying safety and physical constraints. The key insight is that the inherently non-convex problem (due to minimum thrust constraints) admits a **lossless convexification**: relaxing the equality constraint to an inequality yields a second-order cone program (SOCP) whose optimal solution satisfies the original constraint.
 
 ### Key Features
 
