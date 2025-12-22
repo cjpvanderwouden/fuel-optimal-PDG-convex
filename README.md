@@ -14,18 +14,6 @@ This project solves the problem of landing a rocket optimally. Minimizing fuel c
 - **Constraint Handling**: Glideslope (terrain avoidance), pointing (gimbal limits), thrust bounds
 - **Sensitivity Analysis**: Sweeps over throttle limits and glideslope constraints
 
-## Problem Formulation
-
-**Objective**: Minimize ∫‖T(t)‖ dt (fuel consumption)
-
-**Subject to**:
-- **Dynamics**: ṙ = v, v̇ = T/m + g, ṁ = -‖T‖/vₑ
-- **Thrust bounds**: T_min ≤ ‖T(t)‖ ≤ T_max  (non-convex!)
-- **Glideslope**: rz ≥ tan(γ) · ‖(rx, ry)‖
-- **Pointing**: Tz ≥ cos(θ_max) · ‖T‖
-- **Terminal**: r(tf) = 0, v(tf) = 0
-
-The key insight: relaxing ‖u‖ = σ to ‖u‖ ≤ σ yields an SOCP, and **any slack is suboptimal** (you'd be burning fuel without producing thrust). The optimal solution automatically satisfies ‖u‖ = σ.
 
 ## Results
 
@@ -61,7 +49,7 @@ There's a sharp **threshold effect** on minimum throttle: above ~30% of max thru
 
 ## Usage
 
-python main.py --output ./output
+python main.py -- output ./output
 
 This will:
 1. Grid search over flight time to find optimal tf
@@ -102,9 +90,9 @@ This will:
 
 ### Design Choices
 
-1. **Grid search over tf**: The free-final-time problem has bilinear terms (tf · state), making it non-convex. Instead of successive convexification, we solve a grid of fixed-tf problems and pick the best. This is simpler, robust, and produces the fuel vs. tf curve as a byproduct.
+1. **Grid search over tf**: The free-final-time problem has bilinear terms (tf * state), making it non-convex. Instead of successive convexification, we solve a grid of fixed-tf problems and pick the best. This is simpler, robust, and produces the fuel vs. tf curve as a byproduct.
 
-2. **Conservative thrust bounds**: We use ρ_min = T_min/m0 and ρ_max = T_max/m_dry (worst-case over all masses). This guarantees feasibility without iterating. SCP refinement is available but not required for this scenario.
+2. **Conservative thrust bounds**: Use ρ_min = T_min/m0 and ρ_max = T_max/m_dry (worst-case over all masses). This guarantees feasibility without iterating. SCP refinement is available but not required for this scenario.
 
 3. **Discretization**: N=50 time steps with zero-order hold on controls. The state transition uses exact integration for the linear-plus-constant-acceleration dynamics.
 
@@ -114,7 +102,7 @@ The classic proof of losslessness assumes thrust bounds independent of state. Wh
 - Use conservative fixed bounds (our approach)
 - Use successive convexification (also implemented)
 
-See Section 4.5 of the technical note for details.
+See Section 4.5 of the technical note for details..
 
 References
 
