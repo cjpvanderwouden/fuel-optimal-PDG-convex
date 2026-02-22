@@ -57,35 +57,6 @@ This will:
 3. Run sensitivity analyses
 4. Save results to output/
 
-## Project Structure
-
-    powered-descent-guidance/
-    ├── README.md
-    ├── requirements.txt
-    │
-    ├── config.py
-    ├── dynamics.py
-    ├── problem.py
-    ├── solver.py
-    ├── plots.py
-    ├── sensitivity.py
-    ├── main.py
-    │
-    ├── animate_landing.py
-    ├── animate_tmin.py
-    ├── animate_dashboard.py
-    │
-    ├── technical_note.pdf
-    │
-    └── output/
-        ├── figures/
-        ├── trajectory.npz
-        ├── results.json
-        ├── landing_animation.mp4
-        ├── tmin_threshold_animation.mp4
-        ├── dashboard_animation.mp4
-        └── raw_terminal_outputs/
-
 ## Technical Notes
 
 ### Design Choices
